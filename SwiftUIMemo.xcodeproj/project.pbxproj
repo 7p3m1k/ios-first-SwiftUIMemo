@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		17B4A8072616FDD2009E1A6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B4A8062616FDD2009E1A6E /* AppDelegate.swift */; };
 		17B4A8092616FDD2009E1A6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B4A8082616FDD2009E1A6E /* SceneDelegate.swift */; };
-		17B4A80B2616FDD2009E1A6E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B4A80A2616FDD2009E1A6E /* ContentView.swift */; };
+		17B4A80B2616FDD2009E1A6E /* MemoListScence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B4A80A2616FDD2009E1A6E /* MemoListScence.swift */; };
 		17B4A80E2616FDD2009E1A6E /* SwiftUIMemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17B4A80C2616FDD2009E1A6E /* SwiftUIMemo.xcdatamodeld */; };
 		17B4A8102616FDD5009E1A6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17B4A80F2616FDD5009E1A6E /* Assets.xcassets */; };
 		17B4A8132616FDD5009E1A6E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17B4A8122616FDD5009E1A6E /* Preview Assets.xcassets */; };
@@ -20,7 +20,7 @@
 		17B4A8032616FDD2009E1A6E /* SwiftUIMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B4A8062616FDD2009E1A6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17B4A8082616FDD2009E1A6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		17B4A80A2616FDD2009E1A6E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		17B4A80A2616FDD2009E1A6E /* MemoListScence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListScence.swift; sourceTree = "<group>"; };
 		17B4A80D2616FDD2009E1A6E /* SwiftUIMemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftUIMemo.xcdatamodel; sourceTree = "<group>"; };
 		17B4A80F2616FDD5009E1A6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17B4A8122616FDD5009E1A6E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 			children = (
 				17B4A8062616FDD2009E1A6E /* AppDelegate.swift */,
 				17B4A8082616FDD2009E1A6E /* SceneDelegate.swift */,
-				17B4A80A2616FDD2009E1A6E /* ContentView.swift */,
+				17B4A80A2616FDD2009E1A6E /* MemoListScence.swift */,
 				17B4A80F2616FDD5009E1A6E /* Assets.xcassets */,
 				17B4A8142616FDD5009E1A6E /* LaunchScreen.storyboard */,
 				17B4A8172616FDD5009E1A6E /* Info.plist */,
@@ -151,7 +151,7 @@
 				17B4A8072616FDD2009E1A6E /* AppDelegate.swift in Sources */,
 				17B4A80E2616FDD2009E1A6E /* SwiftUIMemo.xcdatamodeld in Sources */,
 				17B4A8092616FDD2009E1A6E /* SceneDelegate.swift in Sources */,
-				17B4A80B2616FDD2009E1A6E /* ContentView.swift in Sources */,
+				17B4A80B2616FDD2009E1A6E /* MemoListScence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
