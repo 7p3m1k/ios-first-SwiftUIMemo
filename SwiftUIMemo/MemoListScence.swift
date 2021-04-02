@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MemoListScence: View {
     var body: some View {
-        Text("Hello, world!")
+        Text("Hello, world !!")
             .padding()
     }
 }
