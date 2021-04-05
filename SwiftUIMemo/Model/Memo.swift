@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class Memo: Identifiable, ObservedObject {
+class Memo: Identifiable, ObservableObject {
     //Identifiable : 데이터 목록을 테이블뷰,컬렉션뷰에 쉽게 바인딩 가능
     //ObservedObject : 반응형 UI 를 위하여
 

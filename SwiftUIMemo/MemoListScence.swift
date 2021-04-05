@@ -8,14 +8,23 @@
 import SwiftUI
 
 struct MemoListScence: View {
+    @EnvironmentObject var store: MemoStore
+    //EnvironmentObject 모든 뷰가 읽을 수 있는 shared 데이터
+    
     var body: some View {
-        Text("Hello, world !!")
-            .padding()
+        NavigationView {
+            List(store.list) { memo in
+                Text(memo.content)
+            }
+            .navigationBarTitle("내 메모")
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         MemoListScence()
+            .environmentObject(MemoStore())
+        //프리뷰에서 사용할 메모스토어를 커스텀 공유데이터로 등록
     }
 }
