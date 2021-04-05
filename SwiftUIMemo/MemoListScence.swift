@@ -16,17 +16,7 @@ struct MemoListScence: View {
     var body: some View {
         NavigationView {
             List(store.list) { memo in
-                VStack(alignment: .leading) {
-                    Text(memo.content)
-                        .font(.body)
-                        .lineLimit(1)
-                    
-                    Text("\(memo.insertDate,formatter: self.formatter)")
-                    //String Interpolation구문으로 바꾼다음 formatter로 방금 추가한 속성적용
-                        .font(.caption)
-                        .foregroundColor(Color(UIColor.secondaryLabel))
-                        
-                }
+                MemoCell(memo: memo)
             }
             .navigationBarTitle("내 메모")
         }
@@ -41,3 +31,4 @@ struct ContentView_Previews: PreviewProvider {
             .environmentObject(DateFormatter.memoDataFormatter)
     }
 }
+
