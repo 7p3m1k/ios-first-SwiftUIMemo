@@ -28,6 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let contentView = MemoListScence()
             .environment(\.managedObjectContext, context)
             .environmentObject(store) // 이렇게하면 MemoListScence과 이어지는 화면에 동일한 객체를 쉽게 주입가능
+            .environmentObject(DateFormatter.memoDataFormatter)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
