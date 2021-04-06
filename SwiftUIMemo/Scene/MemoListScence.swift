@@ -12,6 +12,8 @@ struct MemoListScence: View {
     //EnvironmentObject 모든 뷰가 읽을 수 있는 shared 데이터
     @EnvironmentObject var formatter: DateFormatter
     //formatter 속성 추가
+    @State var showComposer: Bool = false
+    //showComposer 제어할때 사용
     
     var body: some View {
         NavigationView {
@@ -19,7 +21,23 @@ struct MemoListScence: View {
                 MemoCell(memo: memo)
             }
             .navigationBarTitle("내 메모")
+            .navigationBarItems(trailing: ModalButton(show: $showComposer))
+            .sheet(isPresented: $showComposer, content: {
+                ComposeScene(showComposer: self.$showComposer)
+            })
         }
+    }
+}
+
+fileprivate struct ModalButton: View {
+    @Binding var show: Bool
+    
+    var body: some View {
+        Button(action:{
+            self.show = true
+        },label: {
+            Image(systemName: "plus")
+        })
     }
 }
 
