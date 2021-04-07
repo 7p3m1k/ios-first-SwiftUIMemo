@@ -19,12 +19,13 @@ struct ComposeScene: View {
         NavigationView {
             VStack {
                 TextField("", text: $content) //출력전용 (입력을 받을수x)
+                    .background(Color.blue) //텍스트 필드 어딨는지 확인 할려고
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity) //infinity : 사용가능한 최대크기
             .navigationBarTitle("새 메모", displayMode:  .inline)
             .navigationBarItems(
                 leading: DismissButton(show: $showComposer),
-                trailing: SaveButton(show: $showComposer))
+                trailing: SaveButton(show: $showComposer, content: $content))
         }
     }
 }
@@ -46,8 +47,13 @@ fileprivate struct SaveButton: View {
     
     @Binding var show: Bool
     
+    @EnvironmentObject var store: MemoStore
+    @Binding var content: String //입력한 텍스트는 바인딩으로 받음
+    
     var body: some View {
         Button(action: {
+            self.store.insert(memo: self.content)
+            
             self.show = false
         }, label: {
             Text("저장")

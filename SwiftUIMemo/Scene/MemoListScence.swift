@@ -24,6 +24,7 @@ struct MemoListScence: View {
             .navigationBarItems(trailing: ModalButton(show: $showComposer))
             .sheet(isPresented: $showComposer, content: {
                 ComposeScene(showComposer: self.$showComposer)
+//                    .environmentObject(self.store) insert 크러쉬나면 써야한다는데 오류가 안뜸.. 일단 주석
             })
         }
     }
