@@ -19,6 +19,7 @@
 		17B4A829261AE672009E1A6E /* DateFormatter+Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B4A828261AE672009E1A6E /* DateFormatter+Memo.swift */; };
 		17B4A82E261AF423009E1A6E /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B4A82D261AF423009E1A6E /* MemoCell.swift */; };
 		17B4A838261AF9A4009E1A6E /* ComposeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B4A837261AF9A4009E1A6E /* ComposeScene.swift */; };
+		17B4A83B261D8DBE009E1A6E /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B4A83A261D8DBD009E1A6E /* TextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		17B4A828261AE672009E1A6E /* DateFormatter+Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Memo.swift"; sourceTree = "<group>"; };
 		17B4A82D261AF423009E1A6E /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		17B4A837261AF9A4009E1A6E /* ComposeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeScene.swift; sourceTree = "<group>"; };
+		17B4A83A261D8DBD009E1A6E /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				17B4A82D261AF423009E1A6E /* MemoCell.swift */,
+				17B4A83A261D8DBD009E1A6E /* TextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				17B4A8212617077B009E1A6E /* Memo.swift in Sources */,
 				17B4A82E261AF423009E1A6E /* MemoCell.swift in Sources */,
 				17B4A838261AF9A4009E1A6E /* ComposeScene.swift in Sources */,
+				17B4A83B261D8DBE009E1A6E /* TextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

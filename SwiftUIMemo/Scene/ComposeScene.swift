@@ -18,7 +18,8 @@ struct ComposeScene: View {
     var body: some View {
         NavigationView {
             VStack {
-                TextField("", text: $content) //출력전용 (입력을 받을수x)
+                TextView(text: $content)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color.blue) //텍스트 필드 어딨는지 확인 할려고
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity) //infinity : 사용가능한 최대크기
