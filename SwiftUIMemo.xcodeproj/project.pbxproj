@@ -21,6 +21,7 @@
 		17B4A838261AF9A4009E1A6E /* ComposeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B4A837261AF9A4009E1A6E /* ComposeScene.swift */; };
 		17B4A83B261D8DBE009E1A6E /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B4A83A261D8DBD009E1A6E /* TextView.swift */; };
 		17B4A83F261EA6DB009E1A6E /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B4A83E261EA6DB009E1A6E /* KeyboardObserver.swift */; };
+		17B4A843261EE9D1009E1A6E /* DetailScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B4A842261EE9D1009E1A6E /* DetailScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		17B4A837261AF9A4009E1A6E /* ComposeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeScene.swift; sourceTree = "<group>"; };
 		17B4A83A261D8DBD009E1A6E /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		17B4A83E261EA6DB009E1A6E /* KeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
+		17B4A842261EE9D1009E1A6E /* DetailScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				17B4A82C261AF37F009E1A6E /* View */,
 				17B4A80A2616FDD2009E1A6E /* MemoListScence.swift */,
 				17B4A837261AF9A4009E1A6E /* ComposeScene.swift */,
+				17B4A842261EE9D1009E1A6E /* DetailScene.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				17B4A83F261EA6DB009E1A6E /* KeyboardObserver.swift in Sources */,
 				17B4A80E2616FDD2009E1A6E /* SwiftUIMemo.xcdatamodeld in Sources */,
 				17B4A829261AE672009E1A6E /* DateFormatter+Memo.swift in Sources */,
+				17B4A843261EE9D1009E1A6E /* DetailScene.swift in Sources */,
 				17B4A8092616FDD2009E1A6E /* SceneDelegate.swift in Sources */,
 				17B4A80B2616FDD2009E1A6E /* MemoListScence.swift in Sources */,
 				17B4A8212617077B009E1A6E /* Memo.swift in Sources */,
