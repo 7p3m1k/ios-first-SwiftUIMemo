@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ComposeScene: View {
+    //키보드옵저버를 주입할 속성을 선언
+//    @EnvironmentObject var Keyboard: KeyboardObserver
     //memo 스토어 속성 선언
     @EnvironmentObject var store: MemoStore
     //입력한 텍스트를 바인딩 할때 쓰는 속성 (주로 state 특성으로 선언)
@@ -20,7 +22,9 @@ struct ComposeScene: View {
             VStack {
                 TextView(text: $content)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color.blue) //텍스트 필드 어딨는지 확인 할려고
+//                    .padding(.bottom,Keyboard.context.height)
+//                    .animation(.easeInOut(duration: Keyboard.context.animatioDuration))
+                    .background(Color.blue) //텍스트 필드 어딨는지 확인 할려고 백그라운드 색상줌
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity) //infinity : 사용가능한 최대크기
             .navigationBarTitle("새 메모", displayMode:  .inline)
@@ -68,5 +72,6 @@ struct ComposeScene_Previews: PreviewProvider {
         ComposeScene(showComposer: .constant(false))
             .environmentObject(MemoStore())
         //MemoStore를 커스텀 공유 데이터로 등록
+//            .environmentObject(KeyboardObserver())
     }
 }
