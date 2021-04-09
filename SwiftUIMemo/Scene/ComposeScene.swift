@@ -17,6 +17,9 @@ struct ComposeScene: View {
     
     @Binding var showComposer: Bool //바인딩 속성 선언
     
+    var memo: Memo? = nil
+    
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -27,10 +30,15 @@ struct ComposeScene: View {
                     .background(Color.blue) //텍스트 필드 어딨는지 확인 할려고 백그라운드 색상줌
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity) //infinity : 사용가능한 최대크기
-            .navigationBarTitle("새 메모", displayMode:  .inline)
+            .navigationBarTitle(memo != nil ? "메모 편집" : "새 메모", displayMode:  .inline)
             .navigationBarItems(
                 leading: DismissButton(show: $showComposer),
-                trailing: SaveButton(show: $showComposer, content: $content))
+                trailing: SaveButton(show: $showComposer, content: $content, memo: memo))
+        }
+        //onAppear 모디파이어 추가
+        //화면이 표시되는 시점에 초기화 되는 코드를 구현할때 쓰임
+        .onAppear {
+            self.content = self.memo?.content ?? ""
         }
     }
 }
@@ -55,9 +63,17 @@ fileprivate struct SaveButton: View {
     @EnvironmentObject var store: MemoStore
     @Binding var content: String //입력한 텍스트는 바인딩으로 받음
     
+    var memo: Memo? = nil
+    
     var body: some View {
         Button(action: {
-            self.store.insert(memo: self.content)
+            
+            if let memo = self.memo { //메모가 전달 됐으면 편집모드니까 업데이트 메소드
+                self.store.update(memo: memo, content: self.content)
+            } else {
+                //insert코드
+                self.store.insert(memo: self.content)
+            }
             
             self.show = false
         }, label: {

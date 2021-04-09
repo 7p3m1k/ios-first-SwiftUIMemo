@@ -16,6 +16,8 @@ struct DetailScene: View {
     //날짜 출력에 필요한 formatter를 주입할 속성 선언
     @EnvironmentObject var formatter: DateFormatter
     
+    @State private var showEditSheet = false
+    
     var body: some View {
         VStack {
             ScrollView {
@@ -32,6 +34,22 @@ struct DetailScene: View {
                         .foregroundColor(Color(UIColor.secondaryLabel))
                 }
             }
+            
+            HStack {
+                Button(action: {
+                    //모달로 작업할꺼라 boolean 속성필요 위에 showEditSheet로 선언함
+                    self.showEditSheet.toggle()
+                }, label: {
+                    Image(systemName: "square.and.pencil")
+                })
+                .padding()
+                .sheet(isPresented: $showEditSheet, content: {
+                    ComposeScene(showComposer: self.$showEditSheet, memo: self.memo)
+                        .environmentObject(self.store)
+//                        .environmentObject(KeyboardObserver())
+                })
+            }
+            
         }
         .navigationBarTitle("메모보기")
     }

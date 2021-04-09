@@ -30,7 +30,7 @@ struct MemoListScence: View {
             .sheet(isPresented: $showComposer, content: {
                 ComposeScene(showComposer: self.$showComposer)
 //                    .environmentObject(KeyboardObserver())
-//                    .environmentObject(self.store) insert 크러쉬나면 써야한다는데 오류가 안뜸.. 일단 주석
+                    .environmentObject(self.store) //insert 크러쉬나면 써야한다는데 오류가 안뜸.. 일단 주석
             })
         }
     }
