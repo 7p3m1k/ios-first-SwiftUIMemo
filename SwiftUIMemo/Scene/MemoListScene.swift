@@ -17,13 +17,15 @@ struct MemoListScence: View {
     
     var body: some View {
         NavigationView {
-            List(store.list) { memo in
-                NavigationLink(
-                    destination: DetailScene(memo: memo),
-                    label: {
-                        MemoCell(memo: memo)
-                    })
-                
+            List {
+                ForEach(store.list) { memo in
+                    NavigationLink(
+                        destination: DetailScene(memo: memo),
+                        label: {
+                            MemoCell(memo: memo)
+                        })
+                }
+                .onDelete(perform: store.delete) //MomoStore.swfit에서 만들었던 딜리트 매소드를 파라미터로 전달
             }
             .navigationBarTitle("내 메모")
             .navigationBarItems(trailing: ModalButton(show: $showComposer))
@@ -31,7 +33,7 @@ struct MemoListScence: View {
                 ComposeScene(showComposer: self.$showComposer)
 //                    .environmentObject(KeyboardObserver())
                     .environmentObject(self.store) //insert 크러쉬나면 써야한다는데 오류가 안뜸.. 일단 주석
-            })
+        })
         }
     }
 }

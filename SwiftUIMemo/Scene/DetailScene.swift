@@ -17,6 +17,10 @@ struct DetailScene: View {
     @EnvironmentObject var formatter: DateFormatter
     
     @State private var showEditSheet = false
+    @State private var showDeleteAlert = false
+    
+    //presentationMode 속성에 화면 전환을 관리하는 객체가 저장된다
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack {
@@ -36,6 +40,28 @@ struct DetailScene: View {
             }
             
             HStack {
+                
+                Button(action: {
+                    self.showDeleteAlert.toggle() //속성을 토글
+                }, label: {
+                    Image(systemName: "trash")
+                        .foregroundColor(Color(UIColor.systemRed))
+                })
+                .padding()
+                .alert(isPresented: $showDeleteAlert, content: {
+                    Alert(title: Text("삭제 확인"), message: Text("메모를 삭제 할까요??"),
+                          primaryButton:
+                            .destructive(Text("삭제"),
+                                      action: {
+                                        self.store.delete(memo: self.memo)
+                                        self.presentationMode
+                                            .wrappedValue.dismiss()
+                                      }),
+                          secondaryButton: .cancel())
+                }) //alert 추가
+                
+                Spacer()
+                
                 Button(action: {
                     //모달로 작업할꺼라 boolean 속성필요 위에 showEditSheet로 선언함
                     self.showEditSheet.toggle()
@@ -49,7 +75,8 @@ struct DetailScene: View {
 //                        .environmentObject(KeyboardObserver())
                 })
             }
-            
+            .padding(.leading) //왼쪽 여백
+            .padding(.trailing) //오른쪽 여백
         }
         .navigationBarTitle("메모보기")
     }
