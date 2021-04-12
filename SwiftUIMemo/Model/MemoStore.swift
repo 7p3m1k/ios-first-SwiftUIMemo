@@ -33,7 +33,10 @@ class MemoStore: ObservableObject {
     }
     
     func delete(memo: Memo) {
-        self.list.removeAll{ $0 == memo }
+        DispatchQueue.main.async { //삭제시 콘솔에 오류 안나오게 하는 방법 이라는데 콘솔 오류가 뭔지 모르겠다. 일단은 없어도됨
+            self.list.removeAll{ $0 == memo }
+        }
+        
     }
     
     func delete(set: IndexSet) {
