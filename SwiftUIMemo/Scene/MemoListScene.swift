@@ -1,11 +1,12 @@
 //
-//  ContentView.swift
+//  MemoListScene.swift
 //  SwiftUIMemo
 //
 //  Created by 박민규 on 2021/04/02.
 //
 
 import SwiftUI
+import Alamofire
 
 struct MemoListScence: View {
     @EnvironmentObject var store: MemoStore
@@ -14,6 +15,36 @@ struct MemoListScence: View {
     //formatter 속성 추가
     @State var showComposer: Bool = false
     //showComposer 제어할때 사용
+    
+    
+    //api 작업중
+    struct Welcome: Codable {
+        let name, note: String
+        let photoURL: String
+        let tags: [String]
+        let sns: [String]
+
+        enum CodingKeys: String, CodingKey {
+            case name, note
+            case photoURL = "photo_url"
+            case tags, sns
+        }
+    }
+
+    
+    let request = AF.request("https://us-central1-allius.cloudfunctions.net/getUserBasicInfo?nickname=david").responseJSON() { response in
+      switch response.result {
+      case .success:
+        if let data = try! response.result.get() as? [String: Any] {
+          print(data)
+        }
+      case .failure(let error):
+        print("Error: \(error)")
+        return
+      }
+    }
+    //api 작업중 여기까지
+    
     
     var body: some View {
         NavigationView {
@@ -33,7 +64,7 @@ struct MemoListScence: View {
                 ComposeScene(showComposer: self.$showComposer)
 //                    .environmentObject(KeyboardObserver())
                     .environmentObject(self.store) //insert 크러쉬나면 써야한다는데 오류가 안뜸.. 일단 주석
-        })
+            })
         }
     }
 }
@@ -56,5 +87,6 @@ struct ContentView_Previews: PreviewProvider {
             .environmentObject(MemoStore())
         //프리뷰에서 사용할 메모스토어를 커스텀 공유데이터로 등록
             .environmentObject(DateFormatter.memoDataFormatter)
+        
     }
 }

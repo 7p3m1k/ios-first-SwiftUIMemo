@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct ComposeScene: View {
     //키보드옵저버를 주입할 속성을 선언
 //    @EnvironmentObject var Keyboard: KeyboardObserver
@@ -18,7 +19,6 @@ struct ComposeScene: View {
     @Binding var showComposer: Bool //바인딩 속성 선언
     
     var memo: Memo? = nil
-    
     
     var body: some View {
         NavigationView {
